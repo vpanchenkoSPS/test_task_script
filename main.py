@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 
-from requests import Response
+from requests import Response, RequestException
 from services.marketplace_service import (
     get_sellers_request,
     get_sellers,
@@ -18,8 +18,8 @@ def fetch_marketplace_data() -> Response | list:
         if marketplace_data:
             return print_seller_info_with_products_price_above_100(get_sellers(marketplace_data))
         return marketplace_data
-    except Exception as e:
-        logging.warning(f'Something went wrong: {str(e)}')
+    except RequestException as e:
+        logging.warning(f'There was an ambiguous exception that occurred while handling your request.: {str(e)}')
 
 
 if __name__ == '__main__':
