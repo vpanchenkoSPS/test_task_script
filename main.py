@@ -19,7 +19,7 @@ def fetch_marketplace_data() -> Response | list:
             return print_seller_info_with_products_price_above_100(get_sellers(marketplace_data))
         return marketplace_data
     except RequestException as e:
-        logging.warning(f'There was an ambiguous exception that occurred while handling your request.: {str(e)}')
+        logging.warning(f'There was an ambiguous exception that occurred while handling your request: {str(e)}')
 
 
 if __name__ == '__main__':

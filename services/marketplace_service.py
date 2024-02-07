@@ -17,7 +17,7 @@ from resources.configuration import (
 @retry(
     stop_max_attempt_number=RETRY_MAX_ATTEMPTS,
     wait_exponential_multiplier=RETRY_WAIT_MULTIPLIER,
-    retry_on_exception=lambda e: isinstance(e, (RequestException, Timeout))
+    retry_on_exception=lambda e: isinstance(e, RequestException)
 )
 def get_sellers_request() -> Response:
     try:
