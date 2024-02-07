@@ -73,6 +73,6 @@ def print_seller_info_with_products_price_above_100(sellers: list) -> list:
             print('\n')
             seller_with_products_price_above_100 = seller
             seller_with_products_price_above_100['products'] = products_above_100
-            sellers_with_products_price_above_100.append(seller)
+            sellers_with_products_price_above_100.append(seller_with_products_price_above_100)
             count += 1
     return sellers_with_products_price_above_100
