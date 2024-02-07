@@ -14,10 +14,8 @@ class TestMainFunctions(unittest.TestCase):
         with open('test_data.json', 'r') as file:
             data = json.load(file)
 
-        # Call the method
         result: List[dict] = print_seller_info_with_products_price_above_100(data)
 
-        # Assertions
         expected_length: int = 15
         self.assertEqual(len(result), expected_length)
         mock_print.assert_called()
