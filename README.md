@@ -38,7 +38,7 @@ Call to external service needs to have 60 second time limit.
           - "product_quantity": 7,
           - "product_price": 85
       }],
-        - "rating":4.31},]
+        - "rating":4.31}]
 2) Open [Mockbin](https://mockbin.io/) paste market data to the 'Body'
 3) Copy API url and paste It to the resources/configuration.py/MOCK_ENDPOINT_URL
 4) To run the project you can use 'Run' function at the main.py file or use terminal (Windows)
