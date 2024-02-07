@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import logging
 
 from requests import Response
@@ -10,11 +12,11 @@ from services.marketplace_service import (
 logging.basicConfig(level=logging.INFO)
 
 
-def fetch_marketplace_data() -> Response:
+def fetch_marketplace_data() -> Response | list:
     try:
         marketplace_data = get_sellers_request()
         if marketplace_data:
-            print_seller_info_with_products_price_above_100(get_sellers(marketplace_data))
+            return print_seller_info_with_products_price_above_100(get_sellers(marketplace_data))
         return marketplace_data
     except Exception as e:
         logging.warning(f'Something went wrong: {str(e)}')
